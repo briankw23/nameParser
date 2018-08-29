@@ -4,13 +4,11 @@ using System.Text;
 
 namespace NameParser.Names
 {
-    class LastName
+    class LastName : NameBase
     {   
-        public string Name { get; private set; }
-        public void GetName()
+        public LastName() : base("last")
         {
-            Console.WriteLine("Enter you last name");
-            Name = Console.ReadLine();
+
         }
         public void PrintName()
         {
