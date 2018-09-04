@@ -4,23 +4,29 @@ using System.Text;
 
 namespace NameParser.Names
 {
-    class MiddleName
+    class MiddleName : NameBase
     {
-        public string Name { get; private set; } = "";
+        private readonly FirstName _firstName;
 
-        public void GetName( string firstName)
+
+        public MiddleName(FirstName firstName) : base("middle")
         {
+            Name = "";
+            _firstName = firstName;
+        }
 
-            var middleName = "";
+        
+
+        public override void GetName()
+        {
             if (ConfirmMiddleName())
             {
-                Console.WriteLine("What is it");
-                Name = Console.ReadLine();
-
+                base.GetName();
+           
             }
             else
             {
-                Console.WriteLine($"{firstName}, die.");
+                Console.WriteLine($"{_firstName.Name}, die.");
             }
   
         }
